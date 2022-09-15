@@ -1,7 +1,7 @@
-const User = require('../models/Users');
-const { validationResult } = require("express-validator");
+import { User } from '../models/User.js';
+import { validationResult } from 'express-validator';
 
-const register = async (req, res) => {
+export const register = async (req, res) => {
     // console.log(req.body);
 
     // obtener el resultado de la validacion
@@ -28,7 +28,7 @@ const register = async (req, res) => {
     }
 }
 
-const login = async (req, res) => {
+export const login = async (req, res) => {
     // console.log(req.body);
 
     // obtener el resultado de la validacion
@@ -50,9 +50,4 @@ const login = async (req, res) => {
     } catch (error) {
         res.json(error.message);
     }
-}
-
-module.exports = {
-    register,
-    login
 }

@@ -1,10 +1,11 @@
 {
   "name": "proyect-iush",
+  "type": "module",
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node src/bin/www",
-    "dev": "nodemon src/bin/www"
+    "start": "node src/server/server.js",
+    "dev": "nodemon src/server/server.js"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",

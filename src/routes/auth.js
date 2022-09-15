@@ -1,10 +1,10 @@
-const express = require('express');
-const { body } = require("express-validator");
-const { register, login } = require('../controllers/auth.controller');
+import express from 'express';
+import { body } from "express-validator";
+import { register, login } from '../controllers/auth.controller.js'
 const router = express.Router();
 
 router.post('/register', [
-    body("name", "Min 5 characters").trim().isLength({ min: 5 }).escape(),
+    body("name", "Min 5 characters").trim().escape(),
     body("name", "Name is invalid").notEmpty().escape(),
     body("lastName", "Last name is invalid").trim().notEmpty().escape(),
     body("program", "Program is required").trim().notEmpty().escape(),
@@ -21,4 +21,4 @@ router.post('/login', [
     body("password", "Password is invalid").trim().isLength({ min: 6 }).escape(),
 ], login);
 
-module.exports = router;
+export default router;
